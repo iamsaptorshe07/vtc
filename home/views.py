@@ -14,4 +14,4 @@ def level6(request):
 
 
 def shop(request):
-    return render(request,'level1.html')
+    return render(request,'shop1.html')
