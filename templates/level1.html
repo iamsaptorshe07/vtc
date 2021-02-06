@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>New project</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Coda+Caption:wght@800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+	#Top{
+	width: 100%;
+	height: 55px;
+	background-color:#e6e2df;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+#Top .con{
+	position: relative;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+#Top .con > div{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 500;
+	color: rgba(0, 0, 0, 0.7);
+	font-size: 14px;
+	cursor: default;
+}
+#Top .con > div i{
+	margin: 0 10px;
+	font-size: 1.1rem;
+	color: #c6171e;
+}
+#Top .con > div input{
+	background-color: transparent;
+	border: none;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.7);
+}
+header{
+	width: 100%;
+	height: 130px;
+	position: relative;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	background: radial-gradient(circle, rgba(192,21,29,1) 0%, rgba(95,4,9,1) 100%);
+}
+header .top{
+	background-color: #cb252c36;
+	position: absolute;
+	width: 100%;
+	height: 1px;
+	top: 10px;
+	left: 0;
+}
+header::before{
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 200px;
+	height: 18px;
+	background: linear-gradient(134deg, rgba(238,62,68,1) 28%, rgba(139,6,9,1) 79%);
+	z-index: 1;
+	transform: skew(-50deg) translateX(-30px);
+}
+header::after{
+	content: '';
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 60%;
+	height: 18px;
+	background: linear-gradient(134deg, rgba(238,62,68,1) 28%, rgba(139,6,9,1) 79%);
+	z-index: 1;
+	transform: skew(-50deg) translateX(30px);
+}
+header .logo{
+	z-index: 2;
+	display: flex;
+	align-self: center;
+	justify-content: center;
+	text-align: center;
+	position: relative;
+	flex-flow: column;
+}
+header .logo .logotxt2{
+	font-size: 18px;
+	letter-spacing: 3px;
+	color: #e6e2df;
+	position: relative;
+	width: 200px;
+}
+header .logo .logotxt1{
+	font-family: 'Orbitron', sans-serif;
+	color: #e6e2df;
+	font-stretch: 20px;
+	font-size: 60px;
+	font-weight: bolder;
+	text-shadow: 5px 0px black;
+	letter-spacing: 3px;
+	position: relative;
+	width: 200px;
+}
+.nav{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	display: flex;
+	align-self: center;
+	justify-content: center;
+}
+.nav ul{
+	width: auto;
+	height: auto;
+	display: flex;
+	align-self: center;
+	justify-content: center;
+	position: relative;
+	position: relative;
+}
+.nav ul li{
+	padding: 5px 15px;
+	display: flex;
+	align-self: center;
+	transition: 0.3s;
+	justify-content: center;
+	border-radius: 10px;
+}
+.nav ul li a{
+	font-weight: bold;
+	color: #e6e2df;
+}
+.nav ul li:hover{
+	background-color: #c16166bd;
+}
+.nav ul li:hover ~ .nav span{
+	background-color: #c16166bd;
+}
+.nav span{
+	position: relative;
+	height: 15px;
+	transform: translateY(7px);
+	background-color: #c16166bd;
+	width: 0px;
+}
+.nav span::before{
+	content: '';
+	position: absolute;
+	height: 15px;
+	transform: translateY(3px);
+	background-color: #c16166bd;
+	width: 0.5px;
+	top: 0;
+	left: 0;
+}
+	
+	.main{
+	color:#ffff;
+	background-color:black;
+	padding-top:50px;
+	padding-bottom:25px;
+	padding-left:50px;
+	}
+
+.selection{
+	width: 100%;
+	height: 300px;
+	display: flex;
+	align-self: center;
+	justify-content: center;
+}
+.selection > div{
+	display: flex;
+	align-self: center;
+	justify-content: center;
+}
+.selection .num{
+	width: 60px;
+	height:60px;
+	display: flex;
+	align-self: center;
+	justify-content: center;
+	border-radius: 50%;
+	font-size: 30px;
+	border: 3.5px solid #c6171e;
+	position: relative;
+	cursor: pointer;
+	transition: 0.3s;
+	background-color: white;
+}
+.selection .seen .num{
+	background-color: #d9d7d8;
+	border-color: #d9d7d8;
+}
+.selection .num:hover, .selection .active .num{
+	background: radial-gradient(circle, rgba(192,21,29,1) 64%, rgba(95,4,9,1) 100%);
+	color: #e6e2df;
+	text-shadow: 2px 0px black;
+}
+.selection .active span{
+	font-weight: bold;
+}
+.selection .num p{
+	position: relative;
+	transform: translateY(10%);
+}
+.selection .con > div{
+	display: flex;
+	align-self: center;
+	justify-content: center;
+	flex-flow: column;
+	text-align: center;
+	margin: 30px;
+}
+.selection .con{
+	position: relative;
+	display: flex;
+	align-self: center;
+	justify-content: space-around;
+}
+.selection .con::before{
+	width: 100%;
+	content: '';
+	height: 3px;
+	top: 41%;
+	position: absolute;
+	left: 0;
+	background-color: #c6171e;
+}
+.selectedSection{
+	position: relative;
+	width: 100%;
+}
+.selectedSection .head{
+	width: 100%;
+	height: auto;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	font-size: 35px;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+.selectedSection .head > div{
+	min-width: 310px;
+}
+.selectedSection .head .line{
+	width: 100%;
+	flex-grow: 1;
+	height: 5px;
+	background-color: #205ea9;
+}
+.selectedSection .mid{
+	width: 100%;
+	height: 70px;
+	border-radius: 10px;
+	background-color: #729bcf;
+	margin: 30px 0;
+	text-align: center;
+	text-transform: uppercase;
+	color: white;
+	font-size: 35px;
+	display: flex;
+	justify-content:center;
+	align-items: center;
+	font-weight: bold;
+}
+
+.main2{
+font-family: 'collegeregular';
+font-size: 40px;
+font-weight: 600;
+margin-left: 5px;
+position: relative;
+width: 93%;
+}
+.main2 ::after{
+position: absolute;
+content: "";
+height: 2px;
+background-color: blue;
+width: 50%;
+margin-left: 15px;
+top: 50%;
+}
+
+.main3{
+margin-top:30px;
+font-family: 'collegeregular';
+font-size: 35px;
+color:blue;
+font-weight: 600;
+}
+
+
+
+footer{
+	position: relative;
+	width: 100%;
+	height: 300px;
+	display: flex;
+	color: #e4e2e3;
+	align-items: center;
+	background: radial-gradient(circle, rgba(192,21,29,1) 0%, rgba(95,4,9,1) 100%);
+}
+footer .col-md-3{
+	display: flex;
+	justify-content: center;
+	flex-flow: column;
+	align-items: center;
+}
+footer .top{
+	background-color: #cb252c36;
+	position: absolute;
+	width: 100%;
+	height: 1px;
+	top: 10px;
+	left: 0;
+}
+footer .bottom{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 20px;
+	border-top: 3px solid #cb252c36;
+	background: radial-gradient(circle, rgba(142,18,25,1) 20%, rgba(192,21,29,1) 100%);
+}
+footer .logo{
+	position: relative;
+}
+footer .logo .logotxt1{
+	height: 74px;
+}
+footer .col-md-3:nth-child(1){
+	border-right: 3px solid rgba(117,6,12,1);
+}
+footer .col-md-3:nth-child(1)::after{
+	position: absolute;
+	right: 0px;
+	top: 0;
+	height: 100%;
+	width: 3px;
+	background-color: #9f262b;
+	content: '';
+}
+footer a{
+	color: #e4e2e3;
+}
+
+footer .col-md-3:nth-child(3), footer .col-md-3:nth-child(4){
+	justify-content: space-between;
+	position: relative;
+}
+footer .clientLogin{
+	width: 100%;
+	max-width: 340px;
+	color: #e4e2e3;
+	font-weight: bold;
+	position: relative;
+	border-radius: 20px;
+	padding: 5px 0;
+	background: linear-gradient(0deg, rgba(49,50,54,1) 0%, rgba(29,34,38,1) 100%);
+}
+.subscription{
+	width: 100%;
+	max-width: 340px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+}
+.subscription input{
+	height: 40px;
+	display: flex;
+	align-items: center;
+}
+.subscription button{
+	padding: 5px 10px;
+	color: #e4e2e3;
+	font-weight: bold;
+	background: linear-gradient(0deg, rgba(49,50,54,1) 0%, rgba(29,34,38,1) 100%);
+	flex-grow: 1;
+	width: 100%;
+	height: 100%;
+}
+footer .col-md-3:nth-child(3)::after, footer .col-md-4::after{
+	content: '';
+	position: absolute;
+	height: 6px;
+	left: 50%;
+	transform: translateX(-50%);
+	top: 50%;
+	width: 80%;
+	border-radius: 3px;
+	background: linear-gradient(0deg, rgba(159,38,43,1) 50%, rgba(129,13,19,1) 50%);
+}
+footer .firstrow{
+	position: relative;
+	padding: 30px 0;
+}
+footer .firstrow::after{
+	border-radius: 3px;
+	background: linear-gradient(0deg, rgba(159,38,43,1) 50%, rgba(129,13,19,1) 50%);
+	bottom: 0;
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 6px;
+	content: '';
+}
+footer .col-md-4 h4{
+	position: relative;
+	height: 50%;
+	transform: translateY(20px);
+}
+.socialMedia{
+	width: 100%;
+	height: 50%;
+	transform: translateY(10px);
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.socialMedia > div{
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	margin: 5px;
+	background: radial-gradient(circle, rgba(239,241,239,1) 0%, rgba(185,185,185,1) 49%, rgba(140,135,135,1) 82%, rgba(74,74,76,1) 100%);
+}
+.socialMedia > div i{
+	color: #474749;
+	font-size: 24px;
+}
+
+footer .logo{
+	z-index: 2;
+	display: flex;
+	align-self: center;
+	justify-content: center;
+	text-align: center;
+	position: relative;
+	flex-flow: column;
+}
+footer .logo .logotxt2{
+	font-size: 18px;
+	letter-spacing: 3px;
+	color: #e6e2df;
+	position: relative;
+	width: 200px;
+}
+footer .logo .logotxt1{
+	font-family: 'Orbitron', sans-serif;
+	color: #e6e2df;
+	font-stretch: 20px;
+	font-size: 60px;
+	font-weight: bolder;
+	text-shadow: 5px 0px black;
+	letter-spacing: 3px;
+	position: relative;
+	width: 200px;
+}
+    </style>
+	</head>
+	<body>
+	<section id="Top">
+        <div class="container">
+            <div class="con">
+                <div>
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <p>Maynooth Road, Kilcock, Co Kildare, Ireland</p>
+                </div>
+                <div>
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    <p>info@vtcpperformance.com</p>
+                </div>
+                <div>
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                    <p>+ 353 87 371 1974</p>
+                </div>
+                <div>
+                    <input type="text" placeholder="Search">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </div>
+                <div>
+                    Login
+                    <img src="https://img.icons8.com/material-sharp/24/c6171e/lock-2.png" style="margin-left: 10px;" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <header>
+        <div class="top"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="logo">
+                        <div class="logotxt1">VTC</div>
+                        <div class="logotxt2">PERFORMANCE</div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="nav">
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <span></span>
+                            <li><a href="#">Find your vehicle</a></li>
+                            <span></span>
+                            <li><a href="#">Remapping</a></li>
+                            <span></span>
+                            <li><a href="#">Dyno facilities</a></li>
+                            <span></span>
+                            <li><a href="#">Shop</a></li>
+                            <span></span>
+                            <li><a href="#">Become a dealer</a></li>
+                            <span></span>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>	
+<h1 class="main">Choose Your Vehicle</h1>
+	
+	<section class="selection">
+        <div class="container">
+            <div class="con">
+                <div class="active">
+                    <div class="num"><p>1</p></div>
+                    <span>Choose the Brand</span>
+                </div>
+                <div>
+                    <div class="num"><p>2</p></div>
+                    <span>Choose the Type</span>
+                </div>
+                <div>
+                    <div class="num"><p>3</p></div>
+                    <span>Year Of Constraction?</span>
+                </div>
+                <div>
+                    <div class="num"><p>4</p></div>
+                    <span>Choose the Fuel</span>
+                </div>
+                <div>
+                    <div class="num"><p>5</p></div>
+                    <span>Choose the Engine</span>
+                </div>
+            </div>
+        </div>
+    </section>
+	
+	<div class="container">
+	<h2 class="main2">CHOOSE THE BRAND <span class="lne"></span>
+	</h2>
+	<h3 class="main3">Most Popular</h3>
+	<div class="row text-center text-lg-left">
+
+    <div class="col-lg-3 col-md-4 col-6">
+      <a href="#" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/pWkk7iiCoDM/400x300" alt="">
+          </a>
+    </div>
+    <div class="col-lg-3 col-md-4 col-6">
+      <a href="#" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/aob0ukAYfuI/400x300" alt="">
+          </a>
+    </div>
+    <div class="col-lg-3 col-md-4 col-6">
+      <a href="#" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/EUfxH-pze7s/400x300" alt="">
+          </a>
+    </div>
+    <div class="col-lg-3 col-md-4 col-6">
+      <a href="#" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/M185_qYH8vg/400x300" alt="">
+          </a>
+    </div>
+        
+  </div>
+	
+	<h3 class="main3">All Brands</h3>
+	
+	<div class="row text-center text-lg-left">
+
+    <div class="col-lg-3 col-md-4 col-6">
+      <a href="#" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/pWkk7iiCoDM/400x300" alt="">
+          </a>
+    </div>
+    <div class="col-lg-3 col-md-4 col-6">
+      <a href="#" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/aob0ukAYfuI/400x300" alt="">
+          </a>
+    </div>
+    <div class="col-lg-3 col-md-4 col-6">
+      <a href="#" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/EUfxH-pze7s/400x300" alt="">
+          </a>
+    </div>
+    <div class="col-lg-3 col-md-4 col-6">
+      <a href="#" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/M185_qYH8vg/400x300" alt="">
+          </a>
+    </div>
+    <div class="col-lg-3 col-md-4 col-6">
+      <a href="#" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/sesveuG_rNo/400x300" alt="">
+          </a>
+    </div>
+    <div class="col-lg-3 col-md-4 col-6">
+      <a href="#" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/AvhMzHwiE_0/400x300" alt="">
+          </a>
+    </div>
+    <div class="col-lg-3 col-md-4 col-6">
+      <a href="#" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/2gYsZUmockw/400x300" alt="">
+          </a>
+    </div>
+    <div class="col-lg-3 col-md-4 col-6">
+      <a href="#" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/EMSDtjVHdQ8/400x300" alt="">
+          </a>
+    </div>
+    <div class="col-lg-3 col-md-4 col-6">
+      <a href="#" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/8mUEy0ABdNE/400x300" alt="">
+          </a>
+    </div>
+    <div class="col-lg-3 col-md-4 col-6">
+      <a href="#" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/G9Rfc1qccH4/400x300" alt="">
+          </a>
+    </div>
+    <div class="col-lg-3 col-md-4 col-6">
+      <a href="#" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/aJeH0KcFkuc/400x300" alt="">
+          </a>
+    </div>
+    <div class="col-lg-3 col-md-4 col-6">
+      <a href="#" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/p2TQ-3Bh3Oo/400x300" alt="">
+          </a>
+    </div>
+  </div>
+	</div>
+	
+	
+	<footer>
+        <div class="top"></div>
+        <div class="bottom"></div>
+        <div class="container">
+            <div class="row firstrow">
+                <div class="col-md-3">
+                    <div class="logo">
+                        <div class="logotxt1">VTC</div>
+                        <div class="logotxt2">PERFORMANCE</div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <h4 class="mb-2">Browse Site</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Remapping</a></li>
+                        <li><a href="#">Dyno Facilities</a></li>
+                        <li><a href="#">Become a Dealer</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <button type="button" class="clientLogin">Clients Login</button>
+                    <div class="subscription">
+                        <input type="text" placeholder="Your Email..."/>
+                        <button type="button">Subscribe</button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h4 class="text-center">Follow us on</h4>
+                    <div class="socialMedia">
+                        <div><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                        <div><i class="fa fa-youtube-square" aria-hidden="true"></i></div>
+                        <div><i class="fa fa-facebook" aria-hidden="true"></i></div>
+                        <div><i class="fa fa-twitter" aria-hidden="true"></i></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row pt-2" style="text-align: center;">
+                <p class="text-center w-100">
+                    (c) 2020 VTC Performance. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+	
+	</body>
+	</html>
