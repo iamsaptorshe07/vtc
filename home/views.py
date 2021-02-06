@@ -4,5 +4,14 @@ from django.shortcuts import render
 def level1(request):
     return render(request,'level1.html')
 
+
+def level2(request):
+    return render(request,'demo2.html')
+
+
+def level6(request):
+    return render(request,'demo6.html')
+
+
 def shop(request):
     return render(request,'level1.html')
